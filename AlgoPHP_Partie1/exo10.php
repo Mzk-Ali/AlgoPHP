@@ -23,24 +23,17 @@ echo "<br>";
 echo "Rendue de monnaie :";
 echo "<br>";
 
-while($reste != 0){
-    if($reste >= 10){
-        $nbr_billet_10e = intdiv($reste,10);
-        $reste = $reste - ($nbr_billet_10e * 10);
-    }
-    elseif($reste >= 5){
-        $nbr_billet_5e = intdiv($reste,5);
-        $reste = $reste - ($nbr_billet_5e * 5);
-    }
-    elseif($reste >= 2){
-        $nbr_piece_2e = intdiv($reste,2);
-        $reste = $reste - ($nbr_piece_2e * 2);
-    }
-    elseif($reste >= 1){
-        $nbr_piece_1e = intdiv($reste,1);
-        $reste = $reste - ($nbr_piece_1e * 1);
-    }
-}
+
+
+$nbr_billet_10e = intdiv($reste,10);
+$modulo = $reste % 10;
+$nbr_billet_5e = intdiv($modulo,5);
+$modulo = $modulo % 5;
+$nbr_piece_2e = intdiv($modulo,2);
+$modulo = $modulo % 2;
+$nbr_piece_1e = intdiv($modulo,1);
+$modulo = $modulo % 1;
+
 
 
 echo "$nbr_billet_10e billets de 10 € - $nbr_billet_5e billets de 5 € - $nbr_piece_2e piece de 2 € - $nbr_piece_1e piece de 1 €";

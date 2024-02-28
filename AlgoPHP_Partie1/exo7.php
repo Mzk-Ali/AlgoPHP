@@ -4,17 +4,17 @@
 
 $age = 10;
 
-if ($age >= 6 and $age <= 7){
-    $categorie = "la catégorie \" Poussin \"";
+if ($age >= 12){
+    $categorie = "la catégorie \" Cadet \"";
 }
-elseif ($age >= 8 and $age <= 9){
-    $categorie = "la catégorie \" Pupille \"";
-}
-elseif ($age >= 10 and $age <= 11){
+elseif ($age >= 10){
     $categorie = "la catégorie \" Minime \"";
 }
-elseif ($age >= 12){
-    $categorie = "la catégorie \" Cadet \"";
+elseif ($age >= 8){
+    $categorie = "la catégorie \" Pupille \"";
+}
+elseif ($age >= 6){
+    $categorie = "la catégorie \" Poussin \"";
 }
 else{
     $categorie = "aucune catégorie";

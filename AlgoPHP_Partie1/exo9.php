@@ -5,7 +5,7 @@
 $age = 32;
 $sexe = "F";
 
-if(($sexe = "F" and $age >= 18 and $age <= 35) or ($sexe = "H" and $age > 20)) {
+if(($sexe = "F" && $age >= 18 && $age <= 35) || ($sexe = "H" && $age > 20)) {
     echo "La personne est imposable";
 }
 else{
