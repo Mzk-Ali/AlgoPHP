@@ -2,7 +2,7 @@
 
 <?php
 
-$prix_francs = "100";
+$prix_francs = 100;
 echo "Montant en francs : $prix_francs";
 echo "<br>";
 $prix_euros = round($prix_francs / 6.55957, 2);
