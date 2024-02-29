@@ -18,7 +18,7 @@ function afficherTableHTML(array $tab){
     echo "<th>Pays</th>";
     echo "<th>Capitale</th>";
     echo "</tr></thead></table>";
-    echo "<tbody>";
+    //echo "<tbody>";
     foreach($tab as $pays => $capitale){
         $texte_maj = strtoupper($pays);
         echo "<tr>";
@@ -26,7 +26,7 @@ function afficherTableHTML(array $tab){
         echo "<td> $capitale </td>";
         echo "</tr>";
     }
-    echo "</tbody>";
+    //echo "</tbody>";
     echo "</table>";
 
 }
