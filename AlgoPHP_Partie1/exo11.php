@@ -4,7 +4,15 @@
 
 $tableau = ["Peugeot", "Renault", "BMW", "Mercedes",];
 
+echo "<ul>";
 for($i = 0; $i < count($tableau); $i++){
-    echo "<ul><li>$tableau[$i]</li></ul>"; /* Pas sur de l'utilisation de balise html sans avoir fermé la balise php */
-    echo "<br>";
+    echo "<li>$tableau[$i]</li>"; 
 }
+echo "</ul>";
+
+echo "<ul>";
+foreach ($tableau as $marque) {
+    echo "<li>$marque</li>"; 
+    
+}
+echo "</ul>";

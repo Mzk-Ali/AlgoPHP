@@ -10,15 +10,14 @@ $capitales = array(
                     );
 
 
+
 function afficherTableHTML(array $tab){
-    //$texte_maj = strtoupper($tab);
     ksort($tab);
-    //echo $texte_maj;
-    echo "<table border-collapse: 'collapse'><thead><tr>";
+    echo "<table><thead><tr>";
     echo "<th>Pays</th>";
     echo "<th>Capitale</th>";
-    echo "</tr></thead></table>";
-    //echo "<tbody>";
+    echo "</tr></thead>";
+    echo "<tbody>";
     foreach($tab as $pays => $capitale){
         $texte_maj = strtoupper($pays);
         echo "<tr>";
@@ -26,9 +25,18 @@ function afficherTableHTML(array $tab){
         echo "<td> $capitale </td>";
         echo "</tr>";
     }
-    //echo "</tbody>";
+    echo "</tbody>";
     echo "</table>";
 
 }
 
 afficherTableHTML($capitales);
+
+?>
+table{
+    border-collapse: collapse;
+}
+
+td, th{
+    border: 1px solid black;
+}

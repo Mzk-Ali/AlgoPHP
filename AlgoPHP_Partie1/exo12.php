@@ -5,42 +5,44 @@
 $tableau = array(
                 "Mickael" => "FRA",
                 "Virgile" => "ESP",
-                "Marie-Claire" => "ENG"
+                "Marie-Claire" => "ITA"
 );
 
+$tab_lang = [   "FRA" => "Salut",
+                "ESP" => "Hola",
+                "ENG" => "Hello"]; 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+echo "<ul>";
 foreach($tableau as $cle => $langue){
-    if($langue == "FRA"){
-        $bonjour = "Salut";
-    }
-    elseif($langue == "ESP"){
-        $bonjour = "Hola";
-    }
-    else{
-        $bonjour = "Hello";
-    }
+    $bonjour = $tab_lang[$langue];
 
-    echo "<lu><li>$bonjour $cle</li><lu>"; /* Pas sur de l'utilisation de balise html sans avoir fermé la balise php */
-    echo "<br>";
+    echo "<li>$bonjour $cle</li>"; /* Pas sur de l'utilisation de balise html sans avoir fermé la balise php */
 }
+echo "</ul>";
 
 echo "<br>";
 
 
 // --------------------------Inversion------------------------------
 ksort($tableau);
+echo "<ul>";
 foreach($tableau as $cle => $langue){
-    if($langue == "FRA"){
-        $bonjour = "Salut";
-    }
-    elseif($langue == "ESP"){
-        $bonjour = "Hola";
-    }
-    else{
-        $bonjour = "Hello";
-    }
+    $bonjour = $tab_lang[$langue];
 
-    echo "<lu><li>$bonjour $cle</li><lu>"; /* Pas sur de l'utilisation de balise html sans avoir fermé la balise php */
-    echo "<br>";
+    echo "<li>$bonjour $cle</li>"; /* Pas sur de l'utilisation de balise html sans avoir fermé la balise php */
 }
+echo "</ul>";
