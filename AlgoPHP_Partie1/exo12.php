@@ -14,18 +14,6 @@ $tab_lang = [   "FRA" => "Salut",
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 echo "<ul>";
 foreach($tableau as $cle => $langue){
     $bonjour = $tab_lang[$langue];

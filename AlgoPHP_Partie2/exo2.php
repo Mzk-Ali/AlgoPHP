@@ -2,14 +2,11 @@
 
 <?php
 
-$capitales = array(
-                    "France"    =>"Paris",
-                    "Allemagne" =>"Berlin",
-                    "USA"       =>"Washington",
-                    "Italie"    =>"Rome"
-                    );
-
-
+$capitales = [  "France"    =>"Paris",
+                "Allemagne" =>"Berlin",
+                "USA"       =>"Washington",
+                "Italie"    =>"Rome"
+];
 
 function afficherTableHTML(array $tab){
     ksort($tab);
@@ -33,10 +30,13 @@ function afficherTableHTML(array $tab){
 afficherTableHTML($capitales);
 
 ?>
+<style type="text/css">
 table{
     border-collapse: collapse;
 }
 
 td, th{
     border: 1px solid black;
+    padding : 0px 5px;
 }
+</style>

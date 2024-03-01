@@ -2,4 +2,4 @@
 
 <?php
 
-echo "<a href='https://elan-formation.fr/accueil' target='blank'> Lien </a>";
+echo "<a href='https://elan-formation.fr/accueil' target='_blank'> Lien </a>";
