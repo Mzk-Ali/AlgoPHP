@@ -8,13 +8,15 @@ $nomsInput = [  "Nom",
 
 function afficherInput(array $tab)
 {
-    foreach($tab as $keys)
+    $result ="";
+    foreach($tab as $keys) // for = permet de selectionner quand on touche le label
     {
-        echo "<label> $keys </label>";
-        echo "<br>";
-        echo '<input name="$keys" id="$keys" type="text" />';
-        echo "<br>";
+        $result .= "<label for='$keys'> $keys </label>
+                    <br>
+                    <input name='$keys' id='$keys' type='text'/>
+                    <br>";
     } 
+    return $result;
 }
 
-afficherInput($nomsInput);
+echo afficherInput($nomsInput);

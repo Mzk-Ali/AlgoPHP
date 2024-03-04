@@ -4,9 +4,9 @@
 class Compte
 {
     private string $libelle;
-    private int $solde_init;
+    private float $solde_init;
     private string $devise_monetaire;
-    private Titulaire $titulaire
+    private Titulaire $titulaire;
     
 
     public function __construct(string $libelle, int $solde_init, string $devise_monetaire, Titulaire $titulaire)
@@ -19,7 +19,33 @@ class Compte
     }
 
 
-    public function getLibelle()
+    public function crediter(float $val_credit)
+    {
+        $this->solde_init = $this->solde_init + $val_credit;
+        $result = "<br>Le compte est crédité de " .$val_credit. " ".$this->devise_monetaire. "<br>";
+        return $result;
+    }
+
+
+    public function debiter($val_debit)
+    {
+        $this->solde_init = $this->solde_init - $val_debit;
+        $result = "<br>Le compte est débité de " .$val_debit. " ".$this->devise_monetaire. "<br>";
+        return $result;
+    }
+
+    public function virement(Compte $compte, float $montant)
+    {
+        $this->crediter($montant);
+        $id->solde_init = $id->solde_init + $montant;
+        $result = "Le virement du compte est effectué de <br> $this <br> à <br> $id<br>";
+        
+    }
+
+
+
+
+    public function getLibelle(): string
     {
         return $this->libelle;
     }
@@ -55,7 +81,7 @@ class Compte
         return $this;
     }
 
-    public function getTitulaire()
+    public function getTitulaire(): Titulaire
     {
         return $this->titulaire;
     }
@@ -68,9 +94,10 @@ class Compte
     }
 
 
+
     public function __toString()
     {
-        return $this->libelle;
+        return "Compte " .$this->libelle. " de " .$this->titulaire. " avec un solde de " .$this->solde_init. " " .$this->devise_monetaire. "<br>";
     }
 
 

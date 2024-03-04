@@ -31,19 +31,15 @@ class VoitureElec extends Voiture{
 
     public function __toString()
     {
-
+        $string = parent::__toString();
+        return $string;
     }
 
     public function getInfos()
     {
-        echo "<br>";
-        echo "Infos Vehicule";
-        echo "<br>";
-        echo "*****************";
-        echo "<br>";
-        echo "Nom, modèle du Véhicule et autonomie : " .$this->marque." " .$this->modele. " ".$this->autonomie;
-        echo "<br>";
-        echo "<br>";
+        $result = "<br>Infos Vehicule<br>*****************<br>";
+        $result = "Nom, modèle du Véhicule et autonomie : " .$this. " ".$this->autonomie. "<br><br>";
+        return $result;
     }
 
 }

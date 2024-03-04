@@ -8,13 +8,14 @@ $elements = [   "Monsieur",
 
 function alimenterListeDeroulante(array $tab)
 {
-    echo "<select>";
+    $result = "<select name='civilite' id='civilite>";
     foreach($tab as $keys)
     {
-        echo '<option value="'.$keys.'">' .$keys. '</option>';
-        echo "<br>";
+        $result .= "<option value='$keys'> $keys</option><br>";
     }
-    echo "</select>";
+    $result .= "</select>";
+
+    return $result;
 }
 
-alimenterListeDeroulante($elements);
+echo alimenterListeDeroulante($elements);

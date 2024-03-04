@@ -7,11 +7,13 @@ $url = "https://my.mobirise.com/data/userpic/764.jpg";
 
 function repeterImage($lien, $times)
 {  
-    $string = "<img src='$lien'/>";
-    echo str_repeat($string, $times);
+    for($i = 0; $i < $times; $i++)
+    {
+        $string .= "<img src='$lien'/>";
+    }
+    return $string;
 }
-//echo str_repeat($url, 4);
-repeterImage($url, 4);
+echo repeterImage($url, 4);
 
 
 

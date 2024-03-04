@@ -8,14 +8,16 @@ $nomsRadio = [  "Monsieur",
 
 function afficherRadio($tab)
 {
-    echo "<fieldset>";
+    $result = "<fieldset>";
     foreach($tab as $keys)
     {
-        echo "<input type='radio' id='".$keys."' name='radio' value='".$keys."'>";
-        echo "<label for='".$keys."'>$keys</label>";
-        echo "<br>";
+        $result .= "<input type='radio' id='".$keys."' name='civilite' value='".$keys."'>
+                    <label for='".$keys."'>$keys</label>
+                    <br>";
     }
-    echo "</fieldset>";
+    $result .= "</fieldset>";
+
+    return $result;
 }
 
-afficherRadio($nomsRadio);
+echo afficherRadio($nomsRadio);

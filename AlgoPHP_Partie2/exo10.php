@@ -5,9 +5,10 @@
 $nomsInput = [  "Nom",
                 "Prenom",
                 "Email",
-                "Ville",
-                "sexe"];
+                "Ville"];
 
+$sexe = [   "Masculin",
+            "Feminin"];
 
 $elements = [   "-- Intitulé de formation --",
                 "Développeur Logiciel",
@@ -18,27 +19,53 @@ $elements = [   "-- Intitulé de formation --",
 // Entree nom prenom email ville sexe
 function afficherInput(array $tab)
 {
+    $result = "";
     foreach($tab as $keys)
     {
-        echo "<label> $keys </label>";
-        echo "<br>";
-        echo '<input name="$keys" id="$keys" type="text" />';
-        echo "<br>";
-    } 
+        $result .= "<label for= '$keys'> $keys </label>
+                    <br>
+                    <input name='$keys' id='$keys' type='text' />
+                    <br>";
+    }
+    return $result;
+}
+
+function afficherRadio($tab)
+{
+    $result = "<label> Sexe </label><br>";
+    foreach($tab as $keys)
+    {
+        $result .= "<input type='radio' id='".$keys."' name='civilite' value='".$keys."'>
+                    <label for='".$keys."'>$keys</label>
+                    <br>";
+    }
+    //$result .= "</fieldset>";
+
+    return $result;
 }
 
 function alimenterListeDeroulante(array $tab)
 {
-    echo "<label> Choose $tab[0] </label>";
-    echo "<br>";
-    echo "<select>";
+    $result = "<label> Choose $tab[0] </label>
+                <br>
+                <select>";
     foreach($tab as $keys)
     {
-        echo '<option value="'.$keys.'">' .$keys. '</option>';
-        echo "<br>";
+        $result .= "<option value='$keys'> $keys </option>;
+                    <br>";
     }
-    echo "</select>";
+    $result .= "</select>";
+    return $result;
 }
 
-afficherInput($nomsInput);
-alimenterListeDeroulante($elements);
+function affichageFormulaire($nomsInput, $sexe, $elements)
+{
+    $result = "";
+    $result .= afficherInput($nomsInput);
+    $result .= afficherRadio($sexe);
+    $result .= alimenterListeDeroulante($elements);
+    return $result;
+}
+
+
+echo affichageFormulaire($nomsInput, $sexe, $elements);

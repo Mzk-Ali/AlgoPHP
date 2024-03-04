@@ -11,7 +11,7 @@ class Titulaire
 
 
 
-    public function __construct(string $name, string $prenom, string $date_naissance, string $ville)
+    public function __construct(string $nom, string $prenom, string $date_naissance, string $ville)
     {
         $this->nom              = $nom;
         $this->prenom           = $prenom;
@@ -20,18 +20,10 @@ class Titulaire
         $this->comptes          = [];
     }
 
-    public function addCompte(Livre $compte)
+    public function addCompte(Compte $compte)
     {
         $this->comptes[]        = $compte;
     }
-
-
-
-
-
-
-
-
     
  
     public function getNom():string
@@ -82,7 +74,7 @@ class Titulaire
         return $this;
     }
 
-    public function getComptes()
+    public function getComptes(): array
     {
         return $this->comptes;
     }
@@ -95,14 +87,17 @@ class Titulaire
     }
 
 
-
-
-
-
-
-
-
-
+    public function getInfos()
+    {
+        $fus_h  = new DateTimeZone('Europe/Paris');
+        $age = $this->date_naissance ->diff(new DateTime('now', $fus_h))  -> y;
+        $result = "<h2>Compte de " .$this." (" .$age." ans)</h2>";
+        foreach($this->comptes as $keys)
+        {
+            $result .= $keys. "<br>";
+        }
+        return $result;
+    }
 
 
     public function __toString()

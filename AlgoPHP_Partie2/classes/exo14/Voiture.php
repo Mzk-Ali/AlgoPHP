@@ -42,19 +42,15 @@ class Voiture {
 
     public function __toString()
     {
-
+        return $this->marque. " " .$this->modele;
     }
 
     public function getInfos()
     {
         
-        echo "<br>";
-        echo "Infos Vehicule";
-        echo "<br>";
-        echo "*****************";
-        echo "<br>";
-        echo "Nom et modèle du Véhicule : " .$this->marque. " " .$this->modele;
-        echo "<br>";
+        $result = "<br>Infos Vehicule<br>*****************<br>";
+        $result = "Nom et modèle du Véhicule : " .$this. "<br>";
+        return $result;
     }
 
 }

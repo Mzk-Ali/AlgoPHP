@@ -8,24 +8,25 @@ spl_autoload_register(
     }
 );
 
-$v1 = new Voiture("Peugeot", "408", 5, 0);
-$v2 = new Voiture("Citroën", "C4", 3, 0);
+$v1 = new Voiture("Peugeot", "408", 5);
+$v2 = new Voiture("Citroën", "C4", 3);
 
 echo $v1->getInfos();
 echo $v2->getInfos();
 
 
-$v1->demarrer();
-$v1->accelerer(50);
-$v2->demarrer();
-$v2->stopper();
-$v2->accelerer(20);
-$v1->getVitesseActuelle();
-$v2->getVitesseActuelle();
+echo $v1->demarrer();
+echo $v1->accelerer(50);
+echo $v1->ralentir(100);
+echo $v1->getVitesseActuelle();
+echo $v2->demarrer();
+echo $v2->stopper();
+echo $v2->accelerer(20);
+echo $v1->getVitesseActuelle();
+echo $v2->getVitesseActuelle();
 
 echo $v1->getInfos();
 echo $v2->getInfos();
-
 
 
 

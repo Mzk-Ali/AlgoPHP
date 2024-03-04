@@ -3,19 +3,20 @@
 <?php
 
 $elements = [   "Choix 1"=>"checked",
-                "Choix 2"=>"0",
+                "Choix 2"=>"",
                 "Choix 3"=>"checked"];
 
 function genererCheckbox($tab)
 {
-    echo "<form>";
+    $result = "<form>";
     foreach($tab as $keys => $value)
     {
-        echo "<input type='checkbox' id='".$keys."' name='interest' value='".$keys."' $value >";
-        echo "<label for='".$keys."'>$keys</label>";
-        echo "<br>";
+        $result .= "<input type='checkbox' id='".$keys."' name='interest' value='".$keys."' $value >
+                    <label for='".$keys."'>$keys</label><br>";
     }
-    echo "</form>";
+    $result .= "</form>";
+
+    return $result;
 }
 
-genererCheckbox($elements);
+echo genererCheckbox($elements);

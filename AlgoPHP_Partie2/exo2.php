@@ -10,24 +10,26 @@ $capitales = [  "France"    =>"Paris",
 
 function afficherTableHTML(array $tab){
     ksort($tab);
-    echo "<table><thead><tr>";
-    echo "<th>Pays</th>";
-    echo "<th>Capitale</th>";
-    echo "</tr></thead>";
-    echo "<tbody>";
+    $result = "<table>
+                    <thead><tr>
+                        <th>Pays</th>
+                        <th>Capitale</th>
+                    </tr></thead>
+                    <tbody>";
     foreach($tab as $pays => $capitale){
-        $texte_maj = strtoupper($pays);
-        echo "<tr>";
-        echo "<td> $texte_maj </td>";
-        echo "<td> $capitale </td>";
-        echo "</tr>";
+        $texte_maj = mb_strtoupper($pays);
+        $result .= "    <tr>
+                            <td> $texte_maj </td>
+                            <td> $capitale </td>
+                        </tr>";
     }
-    echo "</tbody>";
-    echo "</table>";
+    $result .=      "</tbody>
+                </table>";
 
+    return $result;
 }
 
-afficherTableHTML($capitales);
+echo afficherTableHTML($capitales);
 
 ?>
 <style type="text/css">

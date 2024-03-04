@@ -18,12 +18,12 @@ class Auteur{
 
     public function afficherBibliographie()
     {
-        echo "<h2>Livres de ".$this->prenom. " " .$this->nom. "</h2>";
+        $result = "<h2>Livres de ".$this->prenom. " " .$this->nom. "</h2>";
         foreach($this->livres as $keys)
         {
-            echo "$keys";
-            echo "<br>";
+            $result .= "$keys <br>";
         }
+        return $result;
     }
     
 

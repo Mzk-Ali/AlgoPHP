@@ -5,8 +5,8 @@
 $texte = "Mon texte en parametre";
 
 function convertirMajRouge($arg){
-    $texte_maj = strtoupper($arg);
-    echo "<p style='color: red;'> $texte_maj </p>";
+    $texte_maj = mb_strtoupper($arg);
+    return "<p style='color: red;'> $texte_maj </p>";
 }
 
-convertirMajRouge($texte);
+echo convertirMajRouge($texte);
