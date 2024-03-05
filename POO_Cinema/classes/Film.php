@@ -117,10 +117,13 @@ class Film
 
     public function DureeFilm()
     {
-        $heures = floor($this->duree / 60);
-        $minutes = $this->duree % 60;
+        //$heures = floor($this->duree / 60);
+        //$minutes = $this->duree % 60;
 
-        return "La durée du film est de : ".$heures. "h:" .$minutes;
+        $temps = mktime(0, $this->duree);
+
+        //return "La durée du film est de : ".$heures. "h:" .$minutes;
+        return date("H:i", $temps);
     }
 
 
