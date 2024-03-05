@@ -33,18 +33,12 @@ class Realisateur extends Personne
 
     public function Filmographie()
     {
-        $result = "Le réalisateur ".parent::__toString(). " a réalisé ".count($this->films). " films : ";
+        $result = "Le réalisateur ".$this. " a réalisé ".count($this->films). " films : ";
         foreach($this->films as $keys)
         {
             $result .= "( $keys ), ";
         }
 
         return "<br>$result<br>";
-    }
-
-
-    public function __toString()
-    {
-        return parent::__toString();
     }
 }

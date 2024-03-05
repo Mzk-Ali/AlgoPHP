@@ -31,17 +31,12 @@ class Acteur extends Personne
 
     public function Filmographie()
     {
-        $result = "L'acteur ".parent::__toString(). " a joué dans ".count($this->contrats). " films : ";
+        $result = "L'acteur ".$this. " a joué dans ".count($this->contrats). " films : ";
         foreach($this->contrats as $keys)
         {
-            $result .= "( ".$keys->getFilm()." ), ";
+            $result .= "( ".$keys->getFilm()." en jouant le rôle de " .$keys->getRole(). "), ";
         }
 
         return "<br>$result<br>";
-    }
-
-    public function __toString()
-    {
-        return parent::__toString();
     }
 }

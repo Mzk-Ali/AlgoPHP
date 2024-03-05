@@ -68,6 +68,7 @@ $contrat_9 = new Contrat($film_5, $acteur_7, $role5);
 
 echo $role1->ListeActeurs();
 echo $film_2->CastingFilm();
+echo $film_4->DureeFilm();
 echo $genre_3->ListeParGenre();
 echo $acteur_5->Filmographie();
 echo $realisateur_2->Filmographie();

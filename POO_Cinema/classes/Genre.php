@@ -45,7 +45,7 @@ class Genre
 
     public function ListeParGenre()
     {
-        $result = "Dans le genre " .$this->genre. " il y a " .count($this->films_genre). " films : " ;
+        $result = "Dans le genre " .$this. " il y a " .count($this->films_genre). " films : " ;
         foreach($this->films_genre as $keys)
         {
             $result .= "( $keys ), ";

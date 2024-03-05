@@ -115,6 +115,14 @@ class Film
         return $this;
     }
 
+    public function DureeFilm()
+    {
+        $heures = floor($this->duree / 60);
+        $minutes = $this->duree % 60;
+
+        return "La durée du film est de : ".$heures. "h:" .$minutes;
+    }
+
 
     public function CastingFilm()
     {

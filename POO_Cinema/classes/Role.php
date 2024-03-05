@@ -45,7 +45,7 @@ class Role
 
     public function ListeActeurs()
     {
-        $result = "Les acteurs ayant incarné le rôle de ".$this->nom_personnage." sont : ";
+        $result = "Les acteurs ayant incarné le rôle de ".$this." sont : ";
         foreach($this->contrats as $keys)
         {
             $result .= "( ".$keys->getActeur()." ), ";
