@@ -18,10 +18,10 @@ class Auteur{
 
     public function afficherBibliographie()
     {
-        $result = "<h2>Livres de ".$this->prenom. " " .$this->nom. "</h2>";
-        foreach($this->livres as $keys)
+        $result = "<h2>Livres de ".$this. "</h2>";
+        foreach($this->livres as $livre)
         {
-            $result .= "$keys <br>";
+            $result .= "$livre <br>";
         }
         return $result;
     }
@@ -73,10 +73,5 @@ class Auteur{
     public function __toString()
     {
         return $this->nom. " " .$this->prenom;
-    }
-
-    public function getInfos()
-    {
-        
     }
 }

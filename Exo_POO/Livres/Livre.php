@@ -5,13 +5,13 @@ class Livre{
     private string      $titre;
     private int         $nbr_pages;
     private DateTime    $date_parution;
-    private int         $prix;
+    private float       $prix;
     private Auteur      $auteur;
 
 
 // demarrer, accelerer et stopper
 
-    public function __construct(string $titre, int $nbr_pages, string $date_parution, int $prix, Auteur $auteur)
+    public function __construct(string $titre, int $nbr_pages, string $date_parution, float $prix, Auteur $auteur)
     {
         $this->titre           = $titre;
         $this->nbr_pages       = $nbr_pages;
@@ -58,12 +58,12 @@ class Livre{
         return $this;
     }
 
-    public function getPrix():int
+    public function getPrix():float
     {
         return $this->prix;
     }
 
-    public function setPrix(int $prix)
+    public function setPrix(float $prix)
     {
         $this->prix = $prix;
 
@@ -86,10 +86,5 @@ class Livre{
     public function __toString()
     {
         return $this->titre. " (".$this->date_parution->format('Y').") : " .$this->nbr_pages. " pages / " .$this->prix. " €";
-    }
-
-    public function getInfos()
-    {
-        
     }
 }

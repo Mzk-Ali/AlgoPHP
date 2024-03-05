@@ -21,7 +21,7 @@ class Compte
 
     public function crediter(float $val_credit)
     {
-        $this->solde_init = $this->solde_init + $val_credit;
+        $this->solde_init += $val_credit;
         $result = "<br>Le compte est crédité de " .$val_credit. " ".$this->devise_monetaire. "<br>";
         return $result;
     }
@@ -29,7 +29,7 @@ class Compte
 
     public function debiter(float $val_debit)
     {
-        $this->solde_init = $this->solde_init - $val_debit;
+        $this->solde_init -= $val_debit;
         $result = "<br>Le compte est débité de " .$val_debit. " ".$this->devise_monetaire. "<br>";
         return $result;
     }
@@ -37,7 +37,7 @@ class Compte
     public function virement(Compte $compte, float $montant)
     {
         $this->crediter($montant);
-        $compte->solde_init = $compte->solde_init + $montant;
+        $this->debiter($montant);
         $result = "Le virement du compte est effectué de <br> $this <br> à <br> $compte<br>";
         
     }
