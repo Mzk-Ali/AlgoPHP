@@ -37,8 +37,8 @@ class Compte
     public function virement(Compte $compte, float $montant)
     {
         $this->crediter($montant);
-        $id->solde_init = $id->solde_init + $montant;
-        $result = "Le virement du compte est effectué de <br> $this <br> à <br> $id<br>";
+        $compte->solde_init = $compte->solde_init + $montant;
+        $result = "Le virement du compte est effectué de <br> $this <br> à <br> $compte<br>";
         
     }
 

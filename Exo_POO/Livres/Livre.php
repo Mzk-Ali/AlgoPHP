@@ -51,7 +51,7 @@ class Livre{
         return $this->date_parution;
     }
 
-    public function setDate_parution($date_parution)
+    public function setDate_parution(string $date_parution)
     {
         $this->date_parution = $date_parution;
 

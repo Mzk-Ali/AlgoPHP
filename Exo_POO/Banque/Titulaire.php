@@ -50,12 +50,12 @@ class Titulaire
         return $this;
     }
 
-    public function getDate_naissance()
+    public function getDate_naissance():DateTime
     {
         return $this->date_naissance;
     }
 
-    public function setDate_naissance($date_naissance)
+    public function setDate_naissance(string $date_naissance)
     {
         $this->date_naissance = $date_naissance;
 

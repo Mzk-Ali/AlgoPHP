@@ -51,12 +51,12 @@ class Auteur{
         return $this;
     }
 
-    public function getLivres()
+    public function getLivres():array
     {
         return $this->livres;
     }
 
-    public function setLivres($livres)
+    public function setLivres(array $livres)
     {
         $this->livres = $livres;
 
