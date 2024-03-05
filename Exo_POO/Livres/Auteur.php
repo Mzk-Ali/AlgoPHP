@@ -18,7 +18,7 @@ class Auteur{
 
     public function afficherBibliographie()
     {
-        $result = "<h2>Livres de ".$this. "</h2>";
+        $result = "<h2>Livres de $this </h2>";
         foreach($this->livres as $livre)
         {
             $result .= "$livre <br>";
