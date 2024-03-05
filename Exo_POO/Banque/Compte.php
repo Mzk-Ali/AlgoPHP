@@ -36,9 +36,10 @@ class Compte
 
     public function virement(Compte $compte, float $montant)
     {
-        $this->crediter($montant);
+        $compte->crediter($montant);
         $this->debiter($montant);
         $result = "Le virement du compte est effectué de <br> $this <br> à <br> $compte<br>";
+        return $result;
         
     }
 
