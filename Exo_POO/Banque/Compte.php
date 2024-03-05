@@ -9,7 +9,7 @@ class Compte
     private Titulaire $titulaire;
     
 
-    public function __construct(string $libelle, int $solde_init, string $devise_monetaire, Titulaire $titulaire)
+    public function __construct(string $libelle, float $solde_init, string $devise_monetaire, Titulaire $titulaire)
     {
         $this->libelle          = $libelle;
         $this->solde_init       = $solde_init;
@@ -27,7 +27,7 @@ class Compte
     }
 
 
-    public function debiter($val_debit)
+    public function debiter(float $val_debit)
     {
         $this->solde_init = $this->solde_init - $val_debit;
         $result = "<br>Le compte est débité de " .$val_debit. " ".$this->devise_monetaire. "<br>";
@@ -50,31 +50,31 @@ class Compte
         return $this->libelle;
     }
 
-    public function setLibelle($libelle)
+    public function setLibelle(string $libelle)
     {
         $this->libelle = $libelle;
 
         return $this;
     }
 
-    public function getSolde_init()
+    public function getSolde_init():float
     {
         return $this->solde_init;
     }
 
-    public function setSolde_init($solde_init)
+    public function setSolde_init(float $solde_init)
     {
         $this->solde_init = $solde_init;
 
         return $this;
     }
 
-    public function getDevise_monetaire()
+    public function getDevise_monetaire():string
     {
         return $this->devise_monetaire;
     }
 
-    public function setDevise_monetaire($devise_monetaire)
+    public function setDevise_monetaire(string $devise_monetaire)
     {
         $this->devise_monetaire = $devise_monetaire;
 
@@ -86,7 +86,7 @@ class Compte
         return $this->titulaire;
     }
 
-    public function setTitulaire($titulaire)
+    public function setTitulaire(Titulaire $titulaire)
     {
         $this->titulaire = $titulaire;
 

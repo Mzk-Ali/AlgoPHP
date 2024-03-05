@@ -79,7 +79,7 @@ class Titulaire
         return $this->comptes;
     }
 
-    public function setComptes($comptes)
+    public function setComptes(array $comptes)
     {
         $this->comptes = $comptes;
 
